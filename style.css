@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, #f6f8f8, #4297f9);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    align-items: center;
+}
+
+header nav a {
+    color: #232323;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+.hero {
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("aset/pt_timuraya_tunggal_cover.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    padding: 8rem 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.container {
+    padding: 3rem 2rem;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.bg-light {
+    background: #f9f9f9;
+}
+
+.product-grid {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    min-width: 250px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem max(2rem, calc((100% - 1000px) / 2 + 2rem));
+    background: #222;   
+    color: white;
+}
+
+footer p { margin: 0; }
+
+@media (max-width: 600px) {
+    footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+    }
+}
+
+/*untuk mengatur posisi dari logo di head*/
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #333;
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.logo img {
+    height: 40px; 
+    width: 40px;   
+}
+
+/*Produk Utama */
+#products h2 { text-align: center; font-size: 2rem; margin-bottom: 0.5rem; }
+.section-sub { text-align: center; margin: 0 auto; max-width: 700px; }
+
+.product-tabs { margin-top: 2rem; }
+
+.tab-list {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 8px;
+}
+
+.tab-btn {
+    font: inherit;
+    padding: 12px 14px;
+    white-space: nowrap;
+    background: transparent;
+    color: #555;
+    border: none;
+    border-bottom: 3px solid #555;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+}
+
+.tab-btn:hover { color: #4297f9; border-bottom-color: #4297f9; }
+
+.tab-btn.active {
+    background: #1f6fd6;
+    color: white;
+    border-bottom-color: #1f6fd6;
+}
+
+.product-panel {
+    display: none;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+/*efek transisi tiap produk yang di klik*/
+.product-panel.active { display: flex; animation: fadeIn .35s ease; }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: none; }
+}
+
+.product-image { flex: 1; text-align: center; }
+
+.product-image img {
+    max-width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+}
+
+/* placeholder kalau foto belum ada */
+.product-image.no-img {
+    min-height: 300px;
+    background: #e8eef7;
+    border: 2px dashed #9db7dd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.img-placeholder { display: none; color: #6b82a8; }
+.product-image.no-img .img-placeholder { display: block; }
+
+.product-info { flex: 1; }
+.product-info h3 { font-size: 2rem; margin: 0 0 1rem; color: #232a45; }
+.product-info p { font-size: 1.1rem; }
+
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 10px 24px;
+    background: #1f6fd6;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+.btn:hover { background: #4297f9; }
+
+@media (max-width: 768px) {
+    .product-panel.active { flex-direction: column; gap: 1.5rem; text-align: center; }
+}
+
+/* Layar sempit: tab tetap satu baris, bisa digeser */
+@media (max-width: 900px) {
+    .tab-list {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: thin;
+    }
+    .tab-btn { flex: 0 0 auto; }
+}
+
+/*setingan untuk about*/
+.center { text-align: center; }
+#about h2 { font-size: 2rem; margin-bottom: 1rem; }
+
+.about-intro { max-width: 760px; margin: 0 auto 2.5rem; text-align: center; }
+.about-intro p { font-size: 1.1rem; line-height: 1.8; }
+
+.vm-grid { display: flex; gap: 20px; flex-wrap: wrap; }
+
+.vm-card {
+    flex: 1;
+    min-width: 280px;
+    background: #f4f8fd;
+    border-left: 4px solid #1f6fd6;
+    border-radius: 6px;
+    padding: 1.5rem;
+}
+.vm-card h3 { margin-top: 0; color: #1f6fd6; }
+.vm-card ul { padding-left: 1.2rem; margin: 0; } /*untuk memberi jarak poin yang ada di misi agar center*/
+.vm-card li { margin-bottom: 0.6rem; line-height: 1.6; } /*untuk memberi jarak antar poin misi*/
+
+.sub-title { text-align: center; margin: 3rem 0 1.5rem; font-size: 1.5rem; }
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 20px;
+}
+.value-item { /*untuk memberi style pada kotak kotak nilai*/
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1.25rem;
+    text-align: center;
+}
+.value-item h4 { margin: 0 0 0.5rem; color: #1f6fd6; font-size: 1.15rem; }
+.value-item p { margin: 0; font-size: 0.95rem; line-height: 1.6; }
+
+/*untuk mensetingan print dalam website agar lebih rapih*/
+@media print {
+    section { break-inside: avoid; }
+    * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
