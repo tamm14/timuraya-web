@@ -69,22 +69,25 @@ header nav a:hover {
 }
 
 footer {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     align-items: center;
     padding: 1.5rem max(2rem, calc((100% - 1000px) / 2 + 2rem));
-    background: #222;   
+    background: #222;
     color: white;
 }
 
 footer p { margin: 0; }
+footer p:nth-child(1) { text-align: left; }
+footer p:nth-child(2) { text-align: center; }
+footer p:nth-child(3) { text-align: right; }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     footer {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 0.5rem;
-        text-align: center;
     }
+    footer p:nth-child(n) { text-align: center; }
 }
 
 /*untuk mengatur posisi dari logo di head*/
